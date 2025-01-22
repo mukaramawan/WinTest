@@ -68,10 +68,8 @@ function Signup() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.loginTxt}>Create your Account</Text>
-      <Text style={styles.subloginTxt}>
-        WinTest | Prepare for your Exams with us!
-      </Text>
+      <Text style={styles.SignupTxt}>Create Account</Text>
+      <Text style={styles.subSignupTxt}>Sign up to get Started!</Text>
 
       <Input
         placeholder="Name"
@@ -113,17 +111,6 @@ function Signup() {
         <Button title="Sign Up" onPress={onSignup} />
       )}
 
-      <View style={styles.signinContainer}>
-        <Text style={{ color: "#666" }}>Already have an account?</Text>
-        <TouchableOpacity
-          onPress={() => {
-            router.push("/screens/Login");
-          }}
-        >
-          <Text style={styles.signinText}>Sign In</Text>
-        </TouchableOpacity>
-      </View>
-
       <Text style={styles.orText}>Or Continue with</Text>
 
       <View style={styles.socialContainer}>
@@ -133,6 +120,17 @@ function Signup() {
 
         <TouchableOpacity style={styles.iconContainer}>
           <FontAwesome name="facebook" size={24} color={theme.colors.primary} />
+        </TouchableOpacity>
+      </View>
+
+      <View style={styles.signupContainer}>
+        <Text style={{ color: "#666" }}>Already have an account?</Text>
+        <TouchableOpacity
+          onPress={() => {
+            router.push("/screens/Login");
+          }}
+        >
+          <Text style={styles.signupText}>Sign In</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
@@ -147,25 +145,24 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "white",
   },
-  loginTxt: {
-    fontSize: 28,
+  SignupTxt: {
+    fontSize: theme.size.xxl,
     fontWeight: "bold",
     color: theme.colors.primary,
-    textAlign: "center",
-    marginBottom: 10,
+    textAlign: "left",
+    marginBottom: 5,
   },
-  subloginTxt: {
-    fontSize: 16,
+  subSignupTxt: {
+    fontSize: theme.size.xl,
     color: theme.colors.gray,
-    textAlign: "center",
-    marginBottom: 20,
+    textAlign: "left",
+    marginBottom: 25,
   },
-  signinContainer: {
+  signupContainer: {
     flexDirection: "row",
     justifyContent: "center",
-    marginBottom: 20,
   },
-  signinText: {
+  signupText: {
     fontWeight: "bold",
     color: theme.colors.primary,
     marginLeft: 5,
@@ -178,6 +175,7 @@ const styles = StyleSheet.create({
   socialContainer: {
     flexDirection: "row",
     justifyContent: "center",
+    marginBottom: 10,
   },
   iconContainer: {
     height: 50,

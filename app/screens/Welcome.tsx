@@ -30,7 +30,7 @@ function Welcome() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FFFFFF",
+    backgroundColor: theme.colors.white,
     alignItems: "center",
     justifyContent: "center",
     paddingHorizontal: 20,
@@ -41,14 +41,14 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   title: {
-    fontSize: 32,
+    fontSize: theme.size.xxl,
     fontWeight: "bold",
     color: theme.colors.primary,
     marginBottom: 10,
   },
   subheading: {
     fontSize: theme.size.xl,
-    color: "#666",
+    color: theme.colors.gray,
     textAlign: "center",
     marginBottom: 50,
   },

@@ -44,8 +44,8 @@ function Login() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.loginTxt}>Login here</Text>
-      <Text style={styles.subloginTxt}>Welcome back, Let's Practice!</Text>
+      <Text style={styles.loginTxt}>Welcome,</Text>
+      <Text style={styles.subloginTxt}>Sign in to Continue!</Text>
 
       <Input
         placeholder="Email"
@@ -76,10 +76,6 @@ function Login() {
         <Button title="Log In" onPress={onLogin} />
       )}
 
-      <TouchableOpacity onPress={() => router.push("/screens/Signup")}>
-        <Text style={styles.createAccount}>Create new account</Text>
-      </TouchableOpacity>
-
       <Text style={styles.orText}>Or Continue with</Text>
 
       <View style={styles.socialContainer}>
@@ -89,6 +85,13 @@ function Login() {
 
         <TouchableOpacity style={styles.iconContainer}>
           <FontAwesome name="facebook" size={24} color={theme.colors.primary} />
+        </TouchableOpacity>
+      </View>
+
+      <View style={styles.regContainer}>
+        <Text style={{ color: theme.colors.gray }}>Not a member?</Text>
+        <TouchableOpacity onPress={() => router.push("/screens/Signup")}>
+          <Text style={styles.registerNow}>Register now</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -102,39 +105,36 @@ const styles = StyleSheet.create({
     width: "100%",
     padding: 20,
     justifyContent: "center",
-    backgroundColor: "white",
+    backgroundColor: theme.colors.white,
   },
   loginTxt: {
-    fontSize: 28,
+    fontSize: theme.size.xxl,
     fontWeight: "bold",
     color: theme.colors.primary,
-    textAlign: "center",
-    marginBottom: 10,
+    textAlign: "left",
+    marginBottom: 5,
   },
   subloginTxt: {
-    fontSize: 16,
+    fontSize: theme.size.xx,
     color: theme.colors.gray,
-    textAlign: "center",
-    marginBottom: 20,
+    textAlign: "left",
+    marginBottom: 25,
   },
   forgotPassword: {
     textAlign: "left",
-    color: theme.colors.darkPrimary,
-    marginBottom: 20,
-  },
-  createAccount: {
-    textAlign: "center",
-    color: theme.colors.darkPrimary,
+    color: theme.colors.primaryDark,
     marginBottom: 20,
   },
   orText: {
     textAlign: "center",
     color: theme.colors.gray,
+    fontSize: theme.size.md,
     marginBottom: 10,
   },
   socialContainer: {
     flexDirection: "row",
     justifyContent: "center",
+    marginBottom: 20,
   },
   iconContainer: {
     height: 50,
@@ -143,8 +143,17 @@ const styles = StyleSheet.create({
     margin: 10,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#f3f3f3",
+    backgroundColor: theme.colors.lightGray,
     borderRadius: 25,
+  },
+  regContainer: {
+    flexDirection: "row",
+    justifyContent: "center",
+  },
+  registerNow: {
+    fontWeight: "bold",
+    color: theme.colors.primary,
+    marginLeft: 5,
   },
 });
 

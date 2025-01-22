@@ -1,4 +1,5 @@
-import { StyleSheet, Text, View, TextInput } from "react-native";
+import { StyleSheet, TextInput } from "react-native";
+import { theme } from "@/constants/theme";
 import React from "react";
 
 function Input(props) {
@@ -16,13 +17,13 @@ export default Input;
 
 const styles = StyleSheet.create({
   input: {
-    backgroundColor: "#f3f3f3",
+    backgroundColor: theme.colors.white,
     borderRadius: 8,
     padding: 15,
     marginBottom: 20,
-    borderWidth: 1,
-    borderColor: "#ddd",
-    color: "#333",
+    borderWidth: 2,
+    borderColor: theme.colors.primaryLight,
+    color: theme.colors.black,
     fontSize: 15,
   },
 });
